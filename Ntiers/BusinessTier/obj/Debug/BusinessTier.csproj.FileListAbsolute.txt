@@ -1,0 +1,9 @@
+C:\LabProg\Ntiers\BusinessTier\bin\Debug\BusinessTier.dll
+C:\LabProg\Ntiers\BusinessTier\bin\Debug\BusinessTier.pdb
+C:\LabProg\Ntiers\BusinessTier\bin\Debug\DataTier.dll
+C:\LabProg\Ntiers\BusinessTier\bin\Debug\EntitiesTier.dll
+C:\LabProg\Ntiers\BusinessTier\bin\Debug\DataTier.pdb
+C:\LabProg\Ntiers\BusinessTier\bin\Debug\EntitiesTier.pdb
+C:\LabProg\Ntiers\BusinessTier\obj\Debug\BusinessTier.csprojResolveAssemblyReference.cache
+C:\LabProg\Ntiers\BusinessTier\obj\Debug\BusinessTier.dll
+C:\LabProg\Ntiers\BusinessTier\obj\Debug\BusinessTier.pdb

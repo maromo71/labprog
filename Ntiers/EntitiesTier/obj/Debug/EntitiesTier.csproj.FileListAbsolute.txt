@@ -1,0 +1,4 @@
+C:\LabProg\Ntiers\EntitiesTier\bin\Debug\EntitiesTier.dll
+C:\LabProg\Ntiers\EntitiesTier\bin\Debug\EntitiesTier.pdb
+C:\LabProg\Ntiers\EntitiesTier\obj\Debug\EntitiesTier.dll
+C:\LabProg\Ntiers\EntitiesTier\obj\Debug\EntitiesTier.pdb

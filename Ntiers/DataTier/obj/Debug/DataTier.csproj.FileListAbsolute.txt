@@ -1,0 +1,7 @@
+C:\LabProg\Ntiers\DataTier\bin\Debug\DataTier.dll
+C:\LabProg\Ntiers\DataTier\bin\Debug\DataTier.pdb
+C:\LabProg\Ntiers\DataTier\bin\Debug\EntitiesTier.dll
+C:\LabProg\Ntiers\DataTier\bin\Debug\EntitiesTier.pdb
+C:\LabProg\Ntiers\DataTier\obj\Debug\DataTier.csprojResolveAssemblyReference.cache
+C:\LabProg\Ntiers\DataTier\obj\Debug\DataTier.dll
+C:\LabProg\Ntiers\DataTier\obj\Debug\DataTier.pdb
