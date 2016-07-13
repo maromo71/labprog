@@ -1,0 +1,56 @@
+﻿@model WebSite8.Models.instrutor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>instrutor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sobrenome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sobrenome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+    </dl>
+    <h3>Cursos Oferecidos pelo Instrutor</h3>
+    <table class="table">
+        <tr>
+            <th>Descrição do Curso</th>
+            <th>Créditos</th>
+        </tr>
+        @foreach (var item in Model.cursos)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.descricao)</td>
+                <td>@Html.DisplayFor(modelItem => item.creditos)</td>
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.instrutorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

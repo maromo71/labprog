@@ -1,0 +1,35 @@
+﻿@model WebSite8.Models.cursos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>cursos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.creditos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.creditos)
+        </dd>
+
+    </dl>
+    
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.cursoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

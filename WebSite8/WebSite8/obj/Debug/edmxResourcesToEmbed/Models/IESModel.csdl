@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cursos">
+    <Key>
+      <PropertyRef Name="cursoID" />
+    </Key>
+    <Property Name="cursoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="creditos" Type="Int32" />
+    <NavigationProperty Name="instrutor" Relationship="Self.instrutor_curso" FromRole="cursos" ToRole="instrutor" />
+  </EntityType>
+  <EntityType Name="instrutor">
+    <Key>
+      <PropertyRef Name="instrutorID" />
+    </Key>
+    <Property Name="instrutorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sobrenome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="cursos" Relationship="Self.instrutor_curso" FromRole="instrutor" ToRole="cursos" />
+  </EntityType>
+  <Association Name="instrutor_curso">
+    <End Role="cursos" Type="Self.cursos" Multiplicity="*" />
+    <End Role="instrutor" Type="Self.instrutor" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="IESEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cursos" EntityType="Self.cursos" />
+    <EntitySet Name="instrutor" EntityType="Self.instrutor" />
+    <AssociationSet Name="instrutor_curso" Association="Self.instrutor_curso">
+      <End Role="cursos" EntitySet="cursos" />
+      <End Role="instrutor" EntitySet="instrutor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

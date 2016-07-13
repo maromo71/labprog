@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cursos">
+    <Key>
+      <PropertyRef Name="cursoID" />
+    </Key>
+    <Property Name="cursoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="nvarchar" MaxLength="50" />
+    <Property Name="creditos" Type="int" />
+  </EntityType>
+  <EntityType Name="instrutor">
+    <Key>
+      <PropertyRef Name="instrutorID" />
+    </Key>
+    <Property Name="instrutorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="sobrenome" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="instrutor_curso">
+    <Key>
+      <PropertyRef Name="instrutorID" />
+      <PropertyRef Name="cursoID" />
+    </Key>
+    <Property Name="instrutorID" Type="int" Nullable="false" />
+    <Property Name="cursoID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_instrutor_curso_cursos">
+    <End Role="cursos" Type="Self.cursos" Multiplicity="1" />
+    <End Role="instrutor_curso" Type="Self.instrutor_curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cursos">
+        <PropertyRef Name="cursoID" />
+      </Principal>
+      <Dependent Role="instrutor_curso">
+        <PropertyRef Name="cursoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_instrutor_curso_instrutor">
+    <End Role="instrutor" Type="Self.instrutor" Multiplicity="1" />
+    <End Role="instrutor_curso" Type="Self.instrutor_curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="instrutor">
+        <PropertyRef Name="instrutorID" />
+      </Principal>
+      <Dependent Role="instrutor_curso">
+        <PropertyRef Name="instrutorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IESModelStoreContainer">
+    <EntitySet Name="cursos" EntityType="Self.cursos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="instrutor" EntityType="Self.instrutor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="instrutor_curso" EntityType="Self.instrutor_curso" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_instrutor_curso_cursos" Association="Self.FK_instrutor_curso_cursos">
+      <End Role="cursos" EntitySet="cursos" />
+      <End Role="instrutor_curso" EntitySet="instrutor_curso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_instrutor_curso_instrutor" Association="Self.FK_instrutor_curso_instrutor">
+      <End Role="instrutor" EntitySet="instrutor" />
+      <End Role="instrutor_curso" EntitySet="instrutor_curso" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

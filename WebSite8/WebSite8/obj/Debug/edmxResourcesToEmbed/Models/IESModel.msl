@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IESModelStoreContainer" CdmEntityContainer="IESEntities">
+    <EntitySetMapping Name="cursos">
+      <EntityTypeMapping TypeName="IESModel.cursos">
+        <MappingFragment StoreEntitySet="cursos">
+          <ScalarProperty Name="cursoID" ColumnName="cursoID" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="creditos" ColumnName="creditos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instrutor">
+      <EntityTypeMapping TypeName="IESModel.instrutor">
+        <MappingFragment StoreEntitySet="instrutor">
+          <ScalarProperty Name="instrutorID" ColumnName="instrutorID" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="sobrenome" ColumnName="sobrenome" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="instrutor_curso" TypeName="IESModel.instrutor_curso" StoreEntitySet="instrutor_curso">
+      <EndProperty Name="cursos">
+        <ScalarProperty Name="cursoID" ColumnName="cursoID" />
+      </EndProperty>
+      <EndProperty Name="instrutor">
+        <ScalarProperty Name="instrutorID" ColumnName="instrutorID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
